@@ -60,9 +60,12 @@
     <Compile Include="Application.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewState.cs" />
     <None Include="packages.config" />
     <AndroidResource Include="Resources\layout\Map.axml" />
-    <AndroidResource Include="Resources\layout\Register.axml" />
+    <AndroidResource Include="Resources\layout\Register.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\layout\RegisterProblem.axml" />
   </ItemGroup>
   <ItemGroup>

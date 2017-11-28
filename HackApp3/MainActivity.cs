@@ -4,6 +4,8 @@ using Android.Content.PM;
 using Android.OS;
 using Android.Widget;
 using Esri.ArcGISRuntime.UI.Controls;
+using System;
+using Esri.ArcGISRuntime.UI;
 
 namespace HackApp3
 {
@@ -12,6 +14,8 @@ namespace HackApp3
 	{
 		MapViewModel _mapViewModel = new MapViewModel();
 		MapView _mapView;
+
+		private ViewState m_CurrentView = ViewState.Main;
 
 		protected override void OnCreate(Bundle bundle)
 		{
@@ -36,21 +40,33 @@ namespace HackApp3
 
 			btn_Register.Click += Btn_Register_Click;
 
-			btn_Anon.Click += (s, arg) =>
-			{
-				SetContentView(Resource.Layout.Map);
-			};
+			btn_Anon.Click += RenderMap;
 		}
 
 		private void Btn_Register_Click(object sender, System.EventArgs e)
 		{
 			SetContentView(Resource.Layout.Register);
 
+
 			var btn_RegisterBack = FindViewById<Button>(Resource.Id.RegisterBackButton);
 			btn_RegisterBack.Click += (s2, arg2) =>
 			{
 				Initialize();
 			};
+		}
+		private void RenderMap(object sender, System.EventArgs e)
+		{
+			SetContentView(Resource.Layout.Map);
+
+			//Get MapView from the view and assign map from view-model
+			_mapView = FindViewById<MapView>(Resource.Id.MyMapView);
+			_mapView.Map = _mapViewModel.Map;
+
+			// Listen for changes on the view model
+			_mapViewModel.PropertyChanged += MapViewModel_PropertyChanged;
+			_mapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Recenter;
+			_mapView.LocationDisplay.IsEnabled = true;
+
 		}
 
 		private void MapViewModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
