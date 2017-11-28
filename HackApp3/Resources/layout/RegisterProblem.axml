@@ -19,7 +19,7 @@
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:text="test@test.com"
-			android:paddingBottom="20dip"
+			android:paddingBottom="200dip"
 		/>
 	</TableRow>
 
@@ -52,12 +52,8 @@
 		/>
 	</TableRow>
 
-	
-	<TableRow/>
-	<TableRow/>
-	
 	<View
-			android:layout_height="2dip"
+			android:layout_height="20dip"
 			android:background="#FF909090"/>
 
 
@@ -66,19 +62,20 @@
 			android:text="Back"
 			android:id="@+id/RegisterBackButton"
 			android:layout_width="200px"
-			android:layout_height="90px"
-			android:textSize="42px"/>
+			android:layout_height="75px"/>
+		<TextView
+				android:text="     "
+				android:padding="3dip"/>
 		<Button
 			android:text="Register"
 			android:id="@+id/RegisterBackButton"
-			android:layout_width="500px"
-			android:layout_height="90px"
-			android:textSize="42px"/>
+			android:layout_width="400px"
+			android:layout_height="75px"/>
 	</TableRow>
 
-	<View
+	<!--<View
 			android:layout_height="2dip"
-			android:background="#FF909090"/>
+			android:background="#FF909090"/>-->
 
 	<!--<TableRow>
 		<TextView

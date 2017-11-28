@@ -63,6 +63,7 @@
     <None Include="packages.config" />
     <AndroidResource Include="Resources\layout\Map.axml" />
     <AndroidResource Include="Resources\layout\Register.axml" />
+    <AndroidResource Include="Resources\layout\RegisterProblem.axml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
