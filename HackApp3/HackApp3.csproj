@@ -61,6 +61,8 @@
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="packages.config" />
+    <AndroidResource Include="Resources\layout\Map.axml" />
+    <AndroidResource Include="Resources\layout\Register.axml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
