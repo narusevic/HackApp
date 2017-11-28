@@ -1,83 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-		android:layout_width="fill_parent"
-		android:layout_height="fill_parent"
-		android:stretchColumns="1">
-
-	<TableRow>
-		<TextView android:layout_column="1" android:text="Register" android:padding="3dip" />
-		<!--<TextView android:text="Ctrl-O" android:gravity="right" android:padding="3dip"/>-->
-	</TableRow>
-
-	<TableRow>
-		<TextView
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:text="Mail:"
-		/>
-		<EditText
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:text="test@test.com"
-			android:paddingBottom="200dip"
-		/>
-	</TableRow>
-
-	<TableRow>
-		<TextView
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:text="Password:"
-		/>
-		<EditText
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:password="true"
-			android:text=""
-			android:paddingBottom="20dip"
-		/>
-	</TableRow>
-
-	<TableRow>
-		<TextView
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:text="Test:"
-		/>
-		<EditText
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:text="Testfiueld"
-			android:paddingBottom="20dip"
-		/>
-	</TableRow>
-
-	<View
-			android:layout_height="20dip"
-			android:background="#FF909090"/>
-
-
-	<TableRow>
-		<Button 
-			android:text="Back"
-			android:id="@+id/RegisterBackButton"
-			android:layout_width="200px"
-			android:layout_height="75px"/>
-		<TextView
-				android:text="     "
-				android:padding="3dip"/>
-		<Button
-			android:text="Register"
-			android:id="@+id/RegisterBackButton"
-			android:layout_width="400px"
-			android:layout_height="75px"/>
-	</TableRow>
-
-	<!--<View
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:stretchColumns="1">
+    <TableRow>
+        <TextView
+            android:layout_column="1"
+            android:text="Register"
+            android:padding="3dip" />
+    <!--<TextView android:text="Ctrl-O" android:gravity="right" android:padding="3dip"/>-->
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Mail:" />
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="test@test.com"
+            android:paddingBottom="200dip" />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Password:" />
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:password="true"
+            android:text=""
+            android:paddingBottom="20dip" />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Test:" />
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Testfiueld"
+            android:paddingBottom="20dip" />
+    </TableRow>
+    <View
+        android:layout_height="20dip"
+        android:background="#FF909090" />
+    <TableRow>
+        <Button
+            android:text="Back"
+            android:id="@+id/RegisterBackButton"
+            android:layout_width="200px"
+            android:layout_height="75px" />
+        <TextView
+            android:text="     "
+            android:padding="3dip" />
+        <Button
+            android:text="Register"
+            android:id="@+id/RegisterBackButton"
+            android:layout_width="400px"
+            android:layout_height="75px" />
+    </TableRow>
+<!--<View
 			android:layout_height="2dip"
 			android:background="#FF909090"/>-->
-
-	<!--<TableRow>
+<!--<TableRow>
 		<TextView
 				android:layout_column="1"
 				android:text="Quit"
@@ -87,29 +75,4 @@
 				android:text="Quit"
 				android:padding="3dip"/>
 	</TableRow>-->
-	
 </TableLayout>
-<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-		android:orientation="vertical"
-		android:layout_width="match_parent"
-		android:layout_height="match_parent">-->
-
-	<!--<ContentPage>
-		<StackLayout VerticalOptions="StartAndExpand">
-			<Label android:text="Username" />
-			<Entry android:text="usernameEntry" Placeholder="username" />
-			
-			<Label android:text="Email address" />
-			<Entry android:text="Email address" android:name="Email address" android:id="@+id/RegisterUserMail"/>
-			
-			<Label Text="Password" />
-			<Entry android:name="passwordEntry" IsPassword="true" android:id="@+id/RegisterUserPassword" />
-			
-			<Button android:text="Sign Up" android:id="@+id/RegisterUserButton" />
-			<Label android:name="messageLabel" />
-		</StackLayout>
-	</ContentPage>-->
-
-	<!--<Button android:text="Register" android:id="@+id/RegisterButton" android:layout_width="200px" android:layout_height="50px"></Button>-->
-	
-<!--</LinearLayout>-->
