@@ -26,20 +26,21 @@ namespace HackApp3
 			btn_Register.Click += (s, arg) =>
 			{
 				SetContentView(Resource.Layout.Register);
-
 			};
 
 			btn_Anon.Click += (s, arg) =>
 			{
 				SetContentView(Resource.Layout.Map);
+				//RenderMap();
 
+				////Get MapView from the view and assign map from view-model
+				//_mapView = FindViewById<MapView>(Resource.Id.MyMapView);
+				//_mapView.Map = _mapViewModel.Map;
+
+				//// Listen for changes on the view model
+				//_mapViewModel.PropertyChanged += MapViewModel_PropertyChanged;
 			};
-			// Get MapView from the view and assign map from view-model
-			//_mapView = FindViewById<MapView>(Resource.Id.MyMapView);
-			//_mapView.Map = _mapViewModel.Map;
 
-			//// Listen for changes on the view model
-			//_mapViewModel.PropertyChanged += MapViewModel_PropertyChanged;
 		}
 
         private void MapViewModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
