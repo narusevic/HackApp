@@ -1,24 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:minWidth="25px"
-    android:minHeight="25px">
-    <Button
-        android:text="Register"
-        android:id="@+id/RegisterButton"
-        android:layout_width="600px"
-        android:layout_height="200px"
-        android:layout_marginLeft="0px"
-        android:layout_marginRight="0px"
-        android:layout_marginTop="600px" />
-    <Button
-        android:text="Anonymous"
-        android:id="@+id/AnonymousButton"
-        android:layout_width="600px"
-        android:layout_height="200px"
-        android:layout_marginLeft="0px"
-        android:layout_marginRight="0px"
-        android:layout_marginTop="200px" />
-</LinearLayout>
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:stretchColumns="1"
+		android:background="#fff"
+		android:layout_gravity="center_horizontal">
+
+	<TableRow>
+		<ImageView
+				android:layout_span="2"
+				android:src="@drawable/LogoHigh"
+				android:layout_height="250.0dp"
+				android:id="@+id/imageView2"
+				android:adjustViewBounds="false" />
+	</TableRow>
+
+	<TableRow>
+		<Button
+			android:layout_column="1"
+						android:text="Register"
+						android:id="@+id/RegisterButton"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:background="#91BED4"
+						android:padding="3dip"/>
+
+	</TableRow>
+	<TableRow>
+		<Button
+			android:layout_column="1"
+						android:text="Anonymous"
+						android:id="@+id/AnonymousButton"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:background="#5bc0de"
+						android:padding="3dip"/>
+	</TableRow>
+	
+</TableLayout>

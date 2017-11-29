@@ -98,6 +98,12 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\madCat.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\LogoHigh.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="packages\Esri.ArcGISRuntime.Xamarin.Android.100.1.0\build\MonoAndroid10\Esri.ArcGISRuntime.Xamarin.Android.targets" Condition="Exists('packages\Esri.ArcGISRuntime.Xamarin.Android.100.1.0\build\MonoAndroid10\Esri.ArcGISRuntime.Xamarin.Android.targets')" />
   <Import Project="..\packages\Esri.ArcGISRuntime.Xamarin.Android.100.1.0\build\MonoAndroid10\Esri.ArcGISRuntime.Xamarin.Android.targets" Condition="Exists('..\packages\Esri.ArcGISRuntime.Xamarin.Android.100.1.0\build\MonoAndroid10\Esri.ArcGISRuntime.Xamarin.Android.targets')" />
