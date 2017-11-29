@@ -50,6 +50,12 @@ namespace HackApp3
 			// aapt resource value: 0x7f020001
 			public const int Icon = 2130837505;
 			
+			// aapt resource value: 0x7f020002
+			public const int madCat = 2130837506;
+			
+			// aapt resource value: 0x7f020003
+			public const int madCatT = 2130837507;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -66,14 +72,26 @@ namespace HackApp3
 			// aapt resource value: 0x7f050001
 			public const int AnonymousButton = 2131034113;
 			
-			// aapt resource value: 0x7f050002
-			public const int MyMapView = 2131034114;
-			
 			// aapt resource value: 0x7f050003
-			public const int RegisterBackButton = 2131034115;
+			public const int MyMapView = 2131034115;
+			
+			// aapt resource value: 0x7f050004
+			public const int RegisterBackButton = 2131034116;
 			
 			// aapt resource value: 0x7f050000
 			public const int RegisterButton = 2131034112;
+			
+			// aapt resource value: 0x7f050007
+			public const int RegisterProblemBackButton = 2131034119;
+			
+			// aapt resource value: 0x7f050002
+			public const int RegisterProblemButton = 2131034114;
+			
+			// aapt resource value: 0x7f050006
+			public const int imageView1 = 2131034118;
+			
+			// aapt resource value: 0x7f050005
+			public const int photoButton = 2131034117;
 			
 			static Id()
 			{
