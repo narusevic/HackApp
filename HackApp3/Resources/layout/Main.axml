@@ -20,13 +20,5 @@
         android:layout_height="200px"
         android:layout_marginLeft="0px"
         android:layout_marginRight="0px"
-        android:layout_marginTop="200px"/>
-    <Button
-        android:text="Anonymous"
-        android:id="@+id/RegisterProblemButton"
-        android:layout_width="600px"
-        android:layout_height="200px"
-        android:layout_marginLeft="0px"
-        android:layout_marginRight="0px"
-        android:layout_marginTop="200px"/>
+        android:layout_marginTop="200px" />
 </LinearLayout>

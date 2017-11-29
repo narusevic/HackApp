@@ -74,11 +74,10 @@ namespace HackApp3
 			var btn_Register = FindViewById<Button>(Resource.Id.RegisterButton);
 			var btn_Anon = FindViewById<Button>(Resource.Id.AnonymousButton);
 
-			var btn_RegisterProblemTest = FindViewById<Button>(Resource.Id.RegisterProblemButton);
-			btn_RegisterProblemTest.Click += Btn_RegisterProblemTest_Click;
-
 			btn_Register.Click += Btn_Register_Click;
 			btn_Anon.Click += RenderMap;
+
+			_sketchOverlay = new GraphicsOverlay();
 		}
 
 		private void Btn_RegisterProblemTest_Click(object sender, EventArgs e)
@@ -94,6 +93,22 @@ namespace HackApp3
 			}
 			Button problemBackButton = FindViewById<Button>(Resource.Id.RegisterProblemBackButton);
 			problemBackButton.Click += RenderMap;
+
+			Button problemButton = FindViewById<Button>(Resource.Id.RegisterProblemButton);
+			problemButton.Click += (sender2, e2) => { 
+				Graphic graphic = new Graphic(_mapView.LocationDisplay.MapLocation, GeometryHelper.GetMarker());
+				_sketchOverlay.Graphics.Add(graphic);
+
+				//RenderMap(sender2, e2);
+				SetContentView(Resource.Layout.Map);
+				_mapView = FindViewById<MapView>(Resource.Id.MyMapView);
+				_mapView.Map = _mapViewModel.Map;
+
+				var btn_RegisterIssue = FindViewById<Button>(Resource.Id.RegisterIssue);
+				btn_RegisterIssue.Click += Btn_RegisterProblemTest_Click;
+
+				_mapViewModel.PropertyChanged += MapViewModel_PropertyChanged;
+			};
 		}
 
 		private void Btn_Register_Click(object sender, System.EventArgs e)
@@ -113,21 +128,16 @@ namespace HackApp3
 
 			//Get MapView from the view and assign map from view-model
 			_mapView = FindViewById<MapView>(Resource.Id.MyMapView);
-			var btn_RegisterIssue = FindViewById<Button>(Resource.Id.RegisterIssue);
-
-			btn_RegisterIssue.Click += MarkOnMap;
-
-			_sketchOverlay = new GraphicsOverlay();
 			_mapView.GraphicsOverlays.Add(_sketchOverlay);
+			_mapView.Map = _mapViewModel.Map;
 
-			var markerSymbol = GeometryHelper.GetMarker();
-
+			var btn_RegisterIssue = FindViewById<Button>(Resource.Id.RegisterIssue);
+			btn_RegisterIssue.Click += Btn_RegisterProblemTest_Click;
+			
 			foreach (var geometry in GeometryHelper.GetAll())
 			{
-				_sketchOverlay.Graphics.Add(new Graphic(geometry, markerSymbol));
+				_sketchOverlay.Graphics.Add(new Graphic(geometry, GeometryHelper.GetMarker()));
 			}
-
-			_mapView.Map = _mapViewModel.Map;
 
 			// Listen for changes on the view model
 			_mapViewModel.PropertyChanged += MapViewModel_PropertyChanged;
@@ -135,11 +145,13 @@ namespace HackApp3
 			_mapView.LocationDisplay.IsEnabled = true;
 		}
 
-		private void MarkOnMap(object sender, System.EventArgs e)
+		private void RegisterIssue(object sender, System.EventArgs e)
 		{
 			var btn_RegisterIssue = FindViewById<Button>(Resource.Id.RegisterIssue);
 
-			btn_RegisterIssue.Click += MarkOnMap;
+			SetContentView(Resource.Layout.RegisterProblem);
+
+			btn_RegisterIssue.Click += RegisterIssue;
 
 			Graphic graphic = new Graphic(_mapView.LocationDisplay.MapLocation, GeometryHelper.GetMarker());
 
