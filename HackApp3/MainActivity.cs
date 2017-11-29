@@ -13,6 +13,7 @@ using Esri.ArcGISRuntime.UI.Controls;
 using Java.IO;
 using System.Drawing;
 using Esri.ArcGISRuntime.Symbology;
+using Esri.ArcGISRuntime.Geometry;
 
 namespace HackApp3
 {
@@ -76,8 +77,6 @@ namespace HackApp3
 
 			btn_Register.Click += Btn_Register_Click;
 			btn_Anon.Click += RenderMap;
-
-			_sketchOverlay = new GraphicsOverlay();
 		}
 
 		private void Btn_RegisterProblemTest_Click(object sender, EventArgs e)
@@ -92,22 +91,22 @@ namespace HackApp3
 				problemPhotoButton.Click += TakeAPicture;
 			}
 			Button problemBackButton = FindViewById<Button>(Resource.Id.RegisterProblemBackButton);
-			problemBackButton.Click += RenderMap;
+			problemBackButton.Click += (sender2, e2) => {
+				_mapViewModel = new MapViewModel();
+
+				RenderMap(sender2, e2);
+			};
 
 			Button problemButton = FindViewById<Button>(Resource.Id.RegisterProblemButton);
-			problemButton.Click += (sender2, e2) => { 
-				Graphic graphic = new Graphic(_mapView.LocationDisplay.MapLocation, GeometryHelper.GetMarker());
+			problemButton.Click += (sender2, e2) => { 				
+				_mapViewModel = new MapViewModel();
+
+				RenderMap(sender2, e2);
+
+				var location = _mapView.LocationDisplay.MapLocation;
+
+				Graphic graphic = new Graphic(new MapPoint(location.X, location.Y, new SpatialReference(37001)), GeometryHelper.GetMarker());
 				_sketchOverlay.Graphics.Add(graphic);
-
-				//RenderMap(sender2, e2);
-				SetContentView(Resource.Layout.Map);
-				_mapView = FindViewById<MapView>(Resource.Id.MyMapView);
-				_mapView.Map = _mapViewModel.Map;
-
-				var btn_RegisterIssue = FindViewById<Button>(Resource.Id.RegisterIssue);
-				btn_RegisterIssue.Click += Btn_RegisterProblemTest_Click;
-
-				_mapViewModel.PropertyChanged += MapViewModel_PropertyChanged;
 			};
 		}
 
@@ -128,8 +127,11 @@ namespace HackApp3
 
 			//Get MapView from the view and assign map from view-model
 			_mapView = FindViewById<MapView>(Resource.Id.MyMapView);
-			_mapView.GraphicsOverlays.Add(_sketchOverlay);
 			_mapView.Map = _mapViewModel.Map;
+
+			_sketchOverlay = new GraphicsOverlay();
+
+			_mapView.GraphicsOverlays.Add(_sketchOverlay);
 
 			var btn_RegisterIssue = FindViewById<Button>(Resource.Id.RegisterIssue);
 			btn_RegisterIssue.Click += Btn_RegisterProblemTest_Click;
