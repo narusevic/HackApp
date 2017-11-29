@@ -2,7 +2,8 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent"
-		android:stretchColumns="1">
+		android:stretchColumns="1"
+		android:background="#fff">
 
 	<TableRow>
 		<TextView android:layout_column="1" android:text="Register" android:padding="3dip" />
@@ -14,12 +15,14 @@
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:text="Mail:"
+			android:textColor="#000"
 		/>
 		<EditText
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:text="test@test.com"
+			android:text="your@email.com"
 			android:paddingBottom="20dip"
+			android:textColor="#000"
 		/>
 	</TableRow>
 
@@ -28,6 +31,7 @@
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:text="Password:"
+			android:textColor="#000"
 		/>
 		<EditText
 			android:layout_width="fill_parent"
@@ -35,6 +39,7 @@
 			android:password="true"
 			android:text=""
 			android:paddingBottom="20dip"
+			android:textColor="#000"
 		/>
 	</TableRow>
 
@@ -42,13 +47,45 @@
 		<TextView
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:text="Test:"
+			android:text="First Name:"
+			android:textColor="#000"
 		/>
 		<EditText
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:text="Testfiueld"
+			android:text=""
 			android:paddingBottom="20dip"
+			android:textColor="#000"
+		/>
+	</TableRow>
+	<TableRow>
+		<TextView
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="Last Name:"
+			android:textColor="#000"
+		/>
+		<EditText
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text=""
+			android:paddingBottom="20dip"
+			android:textColor="#000"
+		/>
+	</TableRow>
+	<TableRow>
+		<TextView
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="Address:"
+			android:textColor="#000"
+		/>
+		<EditText
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text=""
+			android:paddingBottom="20dip"
+			android:textColor="#000"
 		/>
 	</TableRow>
 
@@ -66,14 +103,17 @@
 			android:text="Back"
 			android:id="@+id/RegisterBackButton"
 			android:layout_width="200px"
-			android:layout_height="90px"
-			android:textSize="42px"/>
+			android:layout_height="120px"
+			android:textSize="42px"
+			android:background="#5bc0de"/>
 		<Button
 			android:text="Register"
 			android:id="@+id/RegisterBackButton"
 			android:layout_width="500px"
-			android:layout_height="90px"
-			android:textSize="42px"/>
+			android:layout_height="120px"
+			android:textSize="42px"
+			android:background="#5bc0de"/>
+		
 	</TableRow>
 
 	<View

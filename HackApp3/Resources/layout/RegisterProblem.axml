@@ -1,64 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
 		android:layout_width="fill_parent"
-		android:layout_height="fill_parent">
+		android:layout_height="fill_parent"
+		android:background="#fff"
+		android:stretchColumns="1">
 
 	<TableRow>
 
 		<Button
-			android:layout_column="1"
+			android:layout_span="2"
 				android:id="@+id/photoButton"
-				android:layout_width="1dp"
-				android:layout_height="wrap_content"
-				android:text="Make a photo" />
+				android:background="#5bc0de"
+				android:text="Make a photo"/>
 	</TableRow>
 
 	<TableRow>
 		<ImageView
-			android:layout_column="1"
+				android:layout_span="2"
 				android:src="@drawable/madCat"
-				android:layout_width="1dp"
 				android:layout_height="300.0dp"
 				android:id="@+id/imageView1"
 				android:adjustViewBounds="false" />
 	</TableRow>
 
 	<TableRow>
-		<TextView
+		<!--<TextView
 			android:layout_width="100dp"
 			android:layout_height="wrap_content"
 			android:text="Description:"
-		/>
+			android:textColor="#000"
+		/>-->
 		<EditText
-			android:layout_width="300dp"
+			android:layout_span="2"
 			android:layout_height="wrap_content"
 			android:text="Provide some info about problem"
-			android:paddingBottom="20dip"
+			android:textColor="#000"
 		/>
 	</TableRow>
 
 	<TableRow>
 		<CheckBox
-				android:layout_width="wrap_content"
+				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:text="Tree" />
+				android:text="Tree"
+				android:textColor="#000"/>
 		<CheckBox
 			android:layout_column="1"
-				android:layout_width="wrap_content"
+				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:text="Road" />
+				android:text="Road"
+			android:textColor="#000"/>
 	</TableRow>
 
 	<TableRow>
 		<CheckBox
-				android:layout_width="wrap_content"
+				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:text="Electricity" />
+				android:text="Electricity"
+				android:textColor="#000"/>
 		<CheckBox
 			android:layout_column="1"
-				android:layout_width="wrap_content"
+				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:text="Other" />
+				android:text="Other"
+			android:textColor="#000"/>
 	</TableRow>
 
 
@@ -75,11 +80,15 @@
 			android:text="Back"
 			android:id="@+id/RegisterProblemBackButton"
 			android:layout_width="100dp"
+							android:background="#5bc0de"
+
 			android:layout_height="100px"/>
 		<Button
 			android:text="Register"
 			android:id="@+id/RegisterProblemButton"
 			android:layout_width="36dp"
+							android:background="#5bc0de"
+
 			android:layout_height="100px"/>
 	</TableRow>
 	
