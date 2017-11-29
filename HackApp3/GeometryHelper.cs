@@ -28,7 +28,8 @@ namespace HackApp3
 				{
 					Color = Color.Black,
 					Width = 2
-				}
+				},
+				Size = 20d
 			};
 		}
 

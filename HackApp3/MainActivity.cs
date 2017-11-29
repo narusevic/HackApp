@@ -25,19 +25,13 @@ namespace HackApp3
 		private GraphicsOverlay _sketchOverlay;
 
 		private ImageView _imageView;
+		private LocationDisplay _locationDisplay;
 
 		protected override void OnCreate(Bundle bundle)
 		{
 			base.OnCreate(bundle);
 
 			Initialize();
-
-			// Get MapView from the view and assign map from view-model
-			//_mapView = FindViewById<MapView>(Resource.Id.MyMapView);
-			//_mapView.Map = _mapViewModel.Map;
-
-			//// Listen for changes on the view model
-			//_mapViewModel.PropertyChanged += MapViewModel_PropertyChanged;
 		}
 
 		protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
@@ -98,14 +92,14 @@ namespace HackApp3
 			};
 
 			Button problemButton = FindViewById<Button>(Resource.Id.RegisterProblemButton);
-			problemButton.Click += (sender2, e2) => { 				
+			problemButton.Click += (sender2, e2) => {
 				_mapViewModel = new MapViewModel();
 
 				RenderMap(sender2, e2);
 
-				var location = _mapView.LocationDisplay.MapLocation;
-
-				Graphic graphic = new Graphic(new MapPoint(location.X, location.Y, new SpatialReference(37001)), GeometryHelper.GetMarker());
+				Graphic graphic = new Graphic(
+					_locationDisplay.MapLocation, 
+					GeometryHelper.GetMarker());
 				_sketchOverlay.Graphics.Add(graphic);
 			};
 		}
@@ -134,16 +128,18 @@ namespace HackApp3
 			_mapView.GraphicsOverlays.Add(_sketchOverlay);
 
 			var btn_RegisterIssue = FindViewById<Button>(Resource.Id.RegisterIssue);
-			btn_RegisterIssue.Click += Btn_RegisterProblemTest_Click;
+			btn_RegisterIssue.Click += (sender2, e2) => {
+				_locationDisplay = _mapView.LocationDisplay;
+				Btn_RegisterProblemTest_Click(sender2, e2);
+			};
 			
 			foreach (var geometry in GeometryHelper.GetAll())
 			{
 				_sketchOverlay.Graphics.Add(new Graphic(geometry, GeometryHelper.GetMarker()));
 			}
 
-			// Listen for changes on the view model
 			_mapViewModel.PropertyChanged += MapViewModel_PropertyChanged;
-			//_mapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Recenter;
+			_mapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Recenter;
 			_mapView.LocationDisplay.IsEnabled = true;
 		}
 
