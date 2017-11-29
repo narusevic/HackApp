@@ -24,7 +24,7 @@ namespace HackApp3
         public MapViewModel()
         {
 
-        }
+		}
 
         private Map _map = new Map(Basemap.CreateStreets());
 
@@ -43,10 +43,8 @@ namespace HackApp3
         /// <param name="propertyName">The name of the property that has changed</param>
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            var propertyChangedHandler = PropertyChanged;
-            if (propertyChangedHandler != null)
-                propertyChangedHandler(this, new PropertyChangedEventArgs(propertyName));
-        }
+			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+		}
 
         public event PropertyChangedEventHandler PropertyChanged;
     }
