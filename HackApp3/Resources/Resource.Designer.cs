@@ -66,9 +66,6 @@ namespace HackApp3
 			// aapt resource value: 0x7f050001
 			public const int AnonymousButton = 2131034113;
 			
-			// aapt resource value: 0x7f050002
-			public const int Mark = 2131034114;
-			
 			// aapt resource value: 0x7f050003
 			public const int MyMapView = 2131034115;
 			
@@ -77,6 +74,9 @@ namespace HackApp3
 			
 			// aapt resource value: 0x7f050000
 			public const int RegisterButton = 2131034112;
+			
+			// aapt resource value: 0x7f050002
+			public const int RegisterIssue = 2131034114;
 			
 			static Id()
 			{

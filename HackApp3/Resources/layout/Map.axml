@@ -3,22 +3,17 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-  <LinearLayout
-      android:layout_width="fill_parent"
-      android:layout_height="200px">
-    <!--<Button
-        android:text="Register Problem"
-        android:id="@+id/RegisterProblem"
+    <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="200px"/>-->
-    <Button
-        android:text="Mark"
-        android:id="@+id/Mark"
+        android:layout_height="200px">
+        <Button
+            android:text="RegisterIssue"
+            android:id="@+id/RegisterIssue"
+            android:layout_width="fill_parent"
+            android:layout_height="200px" />
+    </LinearLayout>
+    <Esri.ArcGISRuntime.UI.MapView
+        android:id="@+id/MyMapView"
         android:layout_width="fill_parent"
-        android:layout_height="200px"/>
-  </LinearLayout>
-  <Esri.ArcGISRuntime.UI.MapView
-      android:id="@+id/MyMapView"
-      android:layout_width="fill_parent"
-      android:layout_height="fill_parent" />
+        android:layout_height="fill_parent" />
 </LinearLayout>

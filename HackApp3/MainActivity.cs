@@ -61,21 +61,16 @@ namespace HackApp3
 
 			//Get MapView from the view and assign map from view-model
 			_mapView = FindViewById<MapView>(Resource.Id.MyMapView);
-			var btn_Mark = FindViewById<Button>(Resource.Id.Mark);
+			var btn_RegisterIssue = FindViewById<Button>(Resource.Id.RegisterIssue);
 
-			btn_Mark.Click += MarkOnMap;
+			btn_RegisterIssue.Click += MarkOnMap;
 
 			_sketchOverlay = new GraphicsOverlay();
 			_mapView.GraphicsOverlays.Add(_sketchOverlay);
 
-			var markerSymbol = new SimpleMarkerSymbol()
-			{
-				Color = Color.Red,
-				Style = SimpleMarkerSymbolStyle.Cross,
-				Size = 30d
-			};
+			var markerSymbol = GeometryHelper.GetMarker();
 
-			foreach (var geometry in Geometries.GetAll())
+			foreach (var geometry in GeometryHelper.GetAll())
 			{
 				_sketchOverlay.Graphics.Add(new Graphic(geometry, markerSymbol));
 			}
@@ -90,21 +85,11 @@ namespace HackApp3
 
 		private void MarkOnMap(object sender, System.EventArgs e)
 		{
-			var btn_Mark = FindViewById<Button>(Resource.Id.Mark);
-			//btn_Mark.Enabled = false;
+			var btn_RegisterIssue = FindViewById<Button>(Resource.Id.RegisterIssue);
 
-			SketchCreationMode creationMode = SketchCreationMode.Point;
-			//Esri.ArcGISRuntime.Geometry.Geometry geometry = await _mapView.SketchEditor.StartAsync(creationMode, true);
-			
-			//btn_Mark.Enabled = true;
-			btn_Mark.Click += MarkOnMap;
+			btn_RegisterIssue.Click += MarkOnMap;
 
-			Graphic graphic = new Graphic(_mapView.LocationDisplay.MapLocation, new SimpleMarkerSymbol()
-			{
-				Color = Color.Red,
-				Style = SimpleMarkerSymbolStyle.Cross,
-				Size = 30d
-			});
+			Graphic graphic = new Graphic(_mapView.LocationDisplay.MapLocation, GeometryHelper.GetMarker());
 
 			_sketchOverlay.Graphics.Add(graphic);
 		}
